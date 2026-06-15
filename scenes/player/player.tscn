@@ -1,18 +1,82 @@
 [gd_scene format=3 uid="uid://bdqoajdndpdqp"]
 
 [ext_resource type="Script" uid="uid://b0ssvmmmkwc5l" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://dnmpxj7yrnu2h" path="res://scenes/player/assets/player-01-stand-smoking-01.png" id="2_cnsyf"]
 [ext_resource type="Texture2D" uid="uid://mh764rcr7wsc" path="res://scenes/player/assets/player-01-stand.png" id="2_h17s1"]
+[ext_resource type="Texture2D" uid="uid://cglexprk32iex" path="res://scenes/player/assets/player-01-stand-smoking-02.png" id="3_007i1"]
 [ext_resource type="Texture2D" uid="uid://bnckfddrdvueu" path="res://scenes/player/assets/player-01-walk-01.png" id="3_je7p5"]
+[ext_resource type="Texture2D" uid="uid://cf5rsuwxnjjer" path="res://scenes/player/assets/player-01-stand-smoking-03.png" id="4_6cv16"]
 [ext_resource type="Texture2D" uid="uid://whvlp2q6hcj8" path="res://scenes/player/assets/player-01-walk-02.png" id="4_fm80t"]
 [ext_resource type="Texture2D" uid="uid://j1ycyqx48j1n" path="res://scenes/player/assets/player-01-walk-03.png" id="5_gx1jg"]
+[ext_resource type="Texture2D" uid="uid://d03kt2oyxds3l" path="res://scenes/player/assets/player-01-stand-smoking-04.png" id="5_j4nxn"]
+[ext_resource type="Texture2D" uid="uid://bcxjjjt53dvaq" path="res://scenes/player/assets/player-01-stand-smoking-05.png" id="6_28m0y"]
 [ext_resource type="Texture2D" uid="uid://d1id8bf4j3uyi" path="res://scenes/player/assets/player-01-walk-04.png" id="6_ugbui"]
 [ext_resource type="Texture2D" uid="uid://b4x8khhqr45k" path="res://scenes/player/assets/player-01-walk-05.png" id="7_fcs02"]
+[ext_resource type="Texture2D" uid="uid://b7fsehglqppib" path="res://scenes/player/assets/player-01-stand-smoking-06.png" id="7_uniwh"]
+[ext_resource type="Texture2D" uid="uid://uub6bh34eekp" path="res://scenes/player/assets/player-01-stand-smoking-07.png" id="8_iqsei"]
 [ext_resource type="Texture2D" uid="uid://py5b505c6pf0" path="res://scenes/player/assets/player-01-walk-06.png" id="8_myrg7"]
 [ext_resource type="Texture2D" uid="uid://dbhjlfi0b84tr" path="res://scenes/player/assets/player-01-walk-07.png" id="9_kvlxm"]
+[ext_resource type="Texture2D" uid="uid://qjyqeqkgkgdf" path="res://scenes/player/assets/player-01-stand-smoking-08.png" id="9_tffgl"]
+[ext_resource type="Texture2D" uid="uid://bkupgx7pac8xp" path="res://scenes/player/assets/player-01-stand-smoking-09.png" id="10_pk8ii"]
 [ext_resource type="Texture2D" uid="uid://bcpqum4gpecah" path="res://scenes/player/assets/player-01-walk-08.png" id="10_uf5tr"]
+[ext_resource type="Texture2D" uid="uid://b5jbnfhkgw2n2" path="res://scenes/player/assets/player-01-stand-smoking-10.png" id="11_5mf0n"]
+[ext_resource type="Texture2D" uid="uid://cl1o2cpukw4q7" path="res://scenes/player/assets/player-01-stand-smoking-11.png" id="12_4hvnv"]
+[ext_resource type="Texture2D" uid="uid://cjd2nsrdmmjw0" path="res://scenes/player/assets/player-01-stand-smoking-12.png" id="13_bbmj2"]
+[ext_resource type="Texture2D" uid="uid://bpupvil3jr86m" path="res://scenes/player/assets/player-01-stand-smoking-13.png" id="14_kxw46"]
+[ext_resource type="Texture2D" uid="uid://qua3w0f78d8a" path="res://scenes/player/assets/player-01-stand-smoking-14.png" id="15_8qxvo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x7p2l"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cnsyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_007i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6cv16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j4nxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_28m0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uniwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iqsei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tffgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pk8ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5mf0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4hvnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bbmj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kxw46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8qxvo")
+}, {
+"duration": 15.0,
+"texture": ExtResource("2_cnsyf")
+}],
+"loop": true,
+"name": &"smoking",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_h17s1")
@@ -61,9 +125,8 @@ script = ExtResource("1_8afob")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1980351065]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"walk"
-frame = 4
-frame_progress = 0.2727572
+animation = &"smoking"
+frame_progress = 0.9988598
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607044017]
 rotation = 1.5707964
@@ -71,4 +134,9 @@ shape = SubResource("CapsuleShape2D_8afob")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1482555455]
 
+[node name="IdleTimer" type="Timer" parent="." unique_id=492714552]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cmur836m02b4y"]
+
+[ext_resource type="Texture2D" uid="uid://des2dsk335vqn" path="res://scenes/main/assets/cursor-clicked-01.png" id="1_jnlyl"]
+[ext_resource type="Texture2D" uid="uid://bbc030x764hjd" path="res://scenes/main/assets/cursor-clicked-02.png" id="2_m20g3"]
+[ext_resource type="Texture2D" uid="uid://buc60lvaavb6m" path="res://scenes/main/assets/cursor-clicked-03.png" id="3_8eoh4"]
+[ext_resource type="Texture2D" uid="uid://dut74x657fpna" path="res://scenes/main/assets/cursor-clicked-04.png" id="4_vhxe2"]
+[ext_resource type="Texture2D" uid="uid://cmtx27qsd02g1" path="res://scenes/main/assets/cursor-clicked-05.png" id="5_1timm"]
+[ext_resource type="Script" uid="uid://b8b3lhr0phkv7" path="res://scenes/main/click_effect.gd" id="6_sdj7l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cq4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jnlyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m20g3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8eoh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vhxe2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1timm")
+}],
+"loop": true,
+"name": &"ripple",
+"speed": 8.0
+}]
+
+[node name="ClickEffect" type="AnimatedSprite2D" unique_id=652990919]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_2cq4l")
+animation = &"ripple"
+script = ExtResource("6_sdj7l")
+
+[node name="Timer" type="Timer" parent="." unique_id=1925407990]
+wait_time = 0.625
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

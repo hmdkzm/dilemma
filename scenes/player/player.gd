@@ -2,14 +2,18 @@ extends CharacterBody2D
 
 @export var speed = 300 # How fast the player will move (pixels/sec).
 @onready var nav_agent = $NavigationAgent2D
+@onready var anim = $AnimatedSprite2D
+@onready var idle_timer = $IdleTimer
+
 var screen_size # Size of the game window.
 var click_position = Vector2()
 var target_position = Vector2()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	position = screen_size / 2
+	position = Vector2(540, 1400)
 	click_position = position
+	idle_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -18,25 +22,24 @@ func _physics_process(delta: float) -> void:
 		nav_agent.target_position = get_global_mouse_position()
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.play()
+		$IdleTimer.stop()
 	velocity = Vector2.ZERO # The player's movement vector.
 	if nav_agent.is_navigation_finished():
-		$AnimatedSprite2D.animation = "stand"
+		if anim.animation != "smoking": # Change "bored" to your specific animation
+			if idle_timer.is_stopped():
+				anim.animation = "stand"
+				idle_timer.start()
 		return
 		
 	var next_path_position = nav_agent.get_next_path_position()
 	var direction = global_position.direction_to(next_path_position)
 	velocity = direction * speed
-	var angle_in_degree = rad_to_deg(velocity.angle()) + 90
-	$AnimatedSprite2D.rotation_degrees = angle_in_degree
+	$AnimatedSprite2D.rotation_degrees = rad_to_deg(velocity.angle()) + 90
 	move_and_slide()
 	return
-		
-	if position.distance_to(click_position) > 10:
-		target_position = (click_position - position).normalized()
-		velocity = target_position * speed
-		move_and_slide()
-		#var angle_in_degree = rad_to_deg(velocity.angle()) + 90
-		$AnimatedSprite2D.rotation_degrees = angle_in_degree
-	else:
-		$AnimatedSprite2D.animation = "stand"
 	
+
+
+func _on_idle_timer_timeout() -> void:
+	$AnimatedSprite2D.animation = "smoking"
+	$AnimatedSprite2D.play()
