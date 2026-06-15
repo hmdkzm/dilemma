@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ojmw5i6txbtl"]
+
+[node name="MapMask" type="StaticBody2D" unique_id=336904258]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1984514572]
+polygon = PackedVector2Array(-98.84839, -1367.4031, -98.84839, -181.22217, -757.8377, -164.74744, -757.8377, -1383.8778)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." unique_id=156149419]
+position = Vector2(1581.5745, 0)
+polygon = PackedVector2Array(-98.84839, -1367.4031, -98.84839, -181.22217, -757.8377, -164.74744, -757.8377, -1383.8778)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="." unique_id=895028861]
+position = Vector2(1532.1503, 1861.6451)
+polygon = PackedVector2Array(-82.37378, -1285.0294, -82.37378, -280.07056, -741.36316, -280.07056, -741.36316, -1153.2317, -642.51465, -1285.0294)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="." unique_id=1787786917]
+position = Vector2(16.474854, 1878.1199)
+polygon = PackedVector2Array(-82.37384, -1153.2314, -104.47485, -286.11987, -736.47485, -278.11987, -757.8379, -1301.504, -181.22223, -1301.504)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="." unique_id=1654530503]
+position = Vector2(823.73663, 1087.3325)
+polygon = PackedVector2Array(-280.07056, -1004.95874, -280.07056, -691.93884, -626.0399, -675.4641, -626.0399, -1004.95874)
