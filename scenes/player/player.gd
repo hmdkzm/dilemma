@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var nav_agent = $NavigationAgent2D
 @onready var anim = $AnimatedSprite2D
 @onready var idle_timer = $IdleTimer
+@onready var walk_sound = $WalkSound
 
 var screen_size # Size of the game window.
 var click_position = Vector2()
@@ -22,9 +23,12 @@ func _physics_process(delta: float) -> void:
 		nav_agent.target_position = get_global_mouse_position()
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.play()
+		if !walk_sound.is_processing():
+			walk_sound.play()
 		$IdleTimer.stop()
 	velocity = Vector2.ZERO # The player's movement vector.
 	if nav_agent.is_navigation_finished():
+		walk_sound.stop()
 		if anim.animation != "smoking": # Change "bored" to your specific animation
 			if idle_timer.is_stopped():
 				anim.animation = "stand"

@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cjd2nsrdmmjw0" path="res://scenes/player/assets/player-01-stand-smoking-12.png" id="13_bbmj2"]
 [ext_resource type="Texture2D" uid="uid://bpupvil3jr86m" path="res://scenes/player/assets/player-01-stand-smoking-13.png" id="14_kxw46"]
 [ext_resource type="Texture2D" uid="uid://qua3w0f78d8a" path="res://scenes/player/assets/player-01-stand-smoking-14.png" id="15_8qxvo"]
+[ext_resource type="AudioStream" uid="uid://b2rhyba2ey243" path="res://scenes/player/assets/audio/bbc_footsteps-_07064076.ogg" id="25_007i1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x7p2l"]
 animations = [{
@@ -126,7 +127,7 @@ script = ExtResource("1_8afob")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x7p2l")
 animation = &"smoking"
-frame_progress = 0.9988598
+frame_progress = 0.16304155
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607044017]
 rotation = 1.5707964
@@ -137,6 +138,9 @@ shape = SubResource("CapsuleShape2D_8afob")
 [node name="IdleTimer" type="Timer" parent="." unique_id=492714552]
 wait_time = 3.0
 one_shot = true
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=2033646354]
+stream = ExtResource("25_007i1")
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
