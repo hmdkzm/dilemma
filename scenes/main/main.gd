@@ -7,13 +7,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 # Preload the effect scene so it's ready to use
 var click_effect_scene = preload("res://scenes/main/click_effect.tscn")
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_pressed("click"):
 		# Create an instance of the effect
 		var effect = click_effect_scene.instantiate()

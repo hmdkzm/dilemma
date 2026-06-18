@@ -1,23 +1,24 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var speed = 300 # How fast the player will move (pixels/sec).
 @onready var nav_agent = $NavigationAgent2D
 @onready var anim = $AnimatedSprite2D
 @onready var idle_timer = $IdleTimer
 @onready var walk_sound = $WalkSound
-
+var is_spawned_at_marker = false
 var screen_size # Size of the game window.
 var click_position = Vector2()
 var target_position = Vector2()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	position = Vector2(540, 1400)
+	if not is_spawned_at_marker:
+		position = Vector2(540, 1300)
 	click_position = position
 	idle_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("click"):
 		click_position = get_global_mouse_position()
 		nav_agent.target_position = get_global_mouse_position()

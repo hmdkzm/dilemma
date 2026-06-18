@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bqgcjvlic1up1"]
+
+[ext_resource type="Script" uid="uid://digshtwaaxvkq" path="res://scenes/map/top_exit.gd" id="1_io74p"]
+[ext_resource type="Script" uid="uid://c4n6n0mdlhojk" path="res://scenes/map/right_exit.gd" id="2_vas0o"]
+[ext_resource type="Script" uid="uid://byoxhdshunejm" path="res://scenes/map/left_exit.gd" id="3_xo4nf"]
+[ext_resource type="Script" uid="uid://bhmvo0sh64gh6" path="res://scenes/map/bottom_exit.gd" id="4_lewqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vas0o"]
+size = Vector2(500, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xo4nf"]
+size = Vector2(50, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lewqs"]
+size = Vector2(50, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oimqs"]
+size = Vector2(500, 50)
+
+[node name="RoomTemplate" type="Node2D" unique_id=2016090015]
+
+[node name="TopExit" type="Area2D" parent="." unique_id=1995505711]
+script = ExtResource("1_io74p")
+
+[node name="TopExitShape" type="CollisionShape2D" parent="TopExit" unique_id=724910868]
+position = Vector2(540, 25)
+shape = SubResource("RectangleShape2D_vas0o")
+disabled = true
+
+[node name="RightExit" type="Area2D" parent="." unique_id=367294302]
+script = ExtResource("2_vas0o")
+
+[node name="RightExitShape" type="CollisionShape2D" parent="RightExit" unique_id=2083834327]
+position = Vector2(1055, 720)
+shape = SubResource("RectangleShape2D_xo4nf")
+disabled = true
+
+[node name="LeftExit" type="Area2D" parent="." unique_id=550124969]
+script = ExtResource("3_xo4nf")
+
+[node name="LeftExitShape" type="CollisionShape2D" parent="LeftExit" unique_id=1040285331]
+position = Vector2(25, 720)
+shape = SubResource("RectangleShape2D_lewqs")
+disabled = true
+
+[node name="BottomExit" type="Area2D" parent="." unique_id=1593499199]
+script = ExtResource("4_lewqs")
+
+[node name="BottomExitShape" type="CollisionShape2D" parent="BottomExit" unique_id=1603189394]
+position = Vector2(540, 1415)
+shape = SubResource("RectangleShape2D_oimqs")
+disabled = true
+
+[node name="SpawnTop" type="Marker2D" parent="." unique_id=514399842]
+position = Vector2(540, 128)
+
+[node name="SpawnRight" type="Marker2D" parent="." unique_id=157918010]
+position = Vector2(960, 728)
+
+[node name="SpawnLeft" type="Marker2D" parent="." unique_id=826691283]
+position = Vector2(128, 728)
+
+[node name="SpawnBottom" type="Marker2D" parent="." unique_id=308562443]
+position = Vector2(536, 1312)
+
+[connection signal="body_entered" from="TopExit" to="TopExit" method="_on_body_entered"]
+[connection signal="body_entered" from="RightExit" to="RightExit" method="_on_body_entered"]
+[connection signal="body_entered" from="LeftExit" to="LeftExit" method="_on_body_entered"]
+[connection signal="body_entered" from="BottomExit" to="BottomExit" method="_on_body_entered"]
