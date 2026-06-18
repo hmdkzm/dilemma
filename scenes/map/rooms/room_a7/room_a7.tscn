@@ -2447,5 +2447,8 @@ tile_set = SubResource("TileSet_uvoa4")
 [node name="TopExit" parent="." index="1" unique_id=1995505711]
 next_level_path = "uid://calp8o68p2uof"
 
+[node name="RightExit" parent="." index="2" unique_id=367294302]
+next_level_path = "uid://bslv86wpkvcid"
+
 [node name="LeftExit" parent="." index="3" unique_id=550124969]
 next_level_path = "uid://bc80disj6le0m"
