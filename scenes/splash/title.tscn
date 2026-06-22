@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://byy620ndhri8o"]
+
+[ext_resource type="Script" uid="uid://b32pinjirgsdv" path="res://scenes/splash/title.gd" id="1_7ivsg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_51uqv"]
+load_path = "res://.godot/imported/main_title.png-87f50c7b75379c2f3fdb026bac4b15b8.ctex"
+
+[sub_resource type="Animation" id="Animation_7ivsg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_51uqv"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ivsg"]
+_data = {
+&"RESET": SubResource("Animation_7ivsg"),
+&"fade_in": SubResource("Animation_51uqv")
+}
+
+[node name="Title" type="Node2D" unique_id=1931735086]
+script = ExtResource("1_7ivsg")
+next_scene_path = "uid://bb5d2hai07wfh"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1793538043]
+modulate = Color(1, 1, 1, 0)
+offset_right = 693.0
+offset_bottom = 152.0
+texture = SubResource("CompressedTexture2D_51uqv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1509927885]
+libraries/ = SubResource("AnimationLibrary_7ivsg")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
