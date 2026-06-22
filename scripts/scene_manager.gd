@@ -1,12 +1,12 @@
 extends Node
 
-@onready var room_container = get_tree().root.get_node("Main/RoomContainer")
 var player_scene = preload("res://scenes/player/player.tscn")
 var entry_point = "SpawnBottom"
 var player: Player
 
 
 func load_room(room_path: String, spawn_side: String):
+	var room_container = get_tree().root.get_node("Main/RoomContainer")
 	print("new room path:", room_path)
 	player = get_tree().root.find_child("Player", true, false)
 	entry_point = spawn_side
@@ -20,6 +20,7 @@ func load_room(room_path: String, spawn_side: String):
 	call_deferred("_position_player")
 
 func _position_player():
+	var room_container = get_tree().root.get_node("Main/RoomContainer")
 	var anim = player.get_node("AnimatedSprite2D")
 	var new_player = player_scene.instantiate()
 	new_player.name = "Player"
