@@ -10,3 +10,4 @@ offset_bottom = 1920.0
 
 [node name="Title" parent="." unique_id=1931735086 instance=ExtResource("1_i52gs")]
 position = Vector2(180, 409)
+next_scene_path = "uid://bux6nauxr36u0"
