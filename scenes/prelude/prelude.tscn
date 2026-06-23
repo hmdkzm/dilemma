@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://w6ildnl1d6vv" path="res://scenes/prelude/prelude.gd" id="1_5ctc7"]
 [ext_resource type="Theme" uid="uid://4md3uk8j8wh1" path="res://assets/theme.tres" id="1_xch6x"]
 [ext_resource type="Script" uid="uid://d2jmngjvyww6h" path="res://scenes/prelude/label.gd" id="2_chdqa"]
-[ext_resource type="Texture2D" uid="uid://k1ewdkithqwg" path="res://assets/ui/button.png" id="3_2kpm6"]
+[ext_resource type="PackedScene" uid="uid://txbqgkmhaprt" path="res://scenes/ui/button/button.tscn" id="4_plwd3"]
 
 [sub_resource type="Animation" id="Animation_5ctc7"]
 length = 0.001
@@ -137,41 +137,22 @@ are you ready"
 horizontal_alignment = 1
 script = ExtResource("2_chdqa")
 
-[node name="GetMeIn" type="TextureButton" parent="." unique_id=1118616675]
-visible = false
-offset_left = 290.0
-offset_top = 1114.0
-offset_right = 790.0
-offset_bottom = 1212.0
-texture_normal = ExtResource("3_2kpm6")
+[node name="GetMeIn" parent="." unique_id=926791053 instance=ExtResource("4_plwd3")]
 
-[node name="Label" type="Label" parent="GetMeIn" unique_id=169601296]
-layout_mode = 0
-offset_left = 157.0
-offset_right = 348.0
-offset_bottom = 87.0
-theme = ExtResource("1_xch6x")
-theme_override_font_sizes/font_size = 68
-text = "Let me in"
+[node name="Label" parent="GetMeIn" index="0" unique_id=997134603]
+text = "Let Me In"
 
-[node name="LetMeThink" type="TextureButton" parent="." unique_id=2141948488]
-visible = false
-offset_left = 290.0
-offset_top = 1287.0
-offset_right = 790.0
-offset_bottom = 1385.0
-texture_normal = ExtResource("3_2kpm6")
+[node name="LetMeThink" parent="." unique_id=2022389236 instance=ExtResource("4_plwd3")]
+offset_top = 1274.0
+offset_bottom = 1372.0
 
-[node name="Label2" type="Label" parent="LetMeThink" unique_id=1643389984]
-layout_mode = 0
-offset_left = 126.0
-offset_right = 373.0
-offset_bottom = 87.0
-theme = ExtResource("1_xch6x")
-theme_override_font_sizes/font_size = 68
-text = "let me think"
+[node name="Label" parent="LetMeThink" index="0" unique_id=997134603]
+text = "Let Me Think"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=384876020]
 libraries/ = SubResource("AnimationLibrary_vfmul")
 
 [connection signal="pressed" from="GetMeIn" to="." method="_on_get_me_in_pressed"]
+
+[editable path="GetMeIn"]
+[editable path="LetMeThink"]
