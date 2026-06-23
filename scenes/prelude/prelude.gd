@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_get_me_in_pressed() -> void:
-	get_tree().change_scene_to_file(next_scene_path)
+	TransitionLayer.change_scene(next_scene_path)
+	#get_tree().change_scene_to_file(next_scene_path)
