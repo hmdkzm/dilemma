@@ -6,6 +6,7 @@ var player: Player
 
 
 func load_room(room_path: String, spawn_side: String):
+	await TransitionLayer.start_transition()
 	var room_container = get_tree().root.get_node("Main/RoomContainer")
 	print("new room path:", room_path)
 	player = get_tree().root.find_child("Player", true, false)
@@ -31,3 +32,4 @@ func _position_player():
 		new_player.global_position = current_room.get_node(entry_point).global_position
 		#new_player.get_node("NavigationAgent2D").target_position = player.global_position
 		get_tree().root.add_child(new_player)
+	TransitionLayer.end_transition()
