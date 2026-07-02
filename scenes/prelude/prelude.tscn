@@ -133,13 +133,15 @@ theme = ExtResource("1_xch6x")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 86
 text = "Once you get in there is no way out
-are you ready"
+are you ready?"
 horizontal_alignment = 1
 script = ExtResource("2_chdqa")
 
 [node name="GetMeIn" parent="." unique_id=926791053 instance=ExtResource("4_plwd3")]
 
 [node name="Label" parent="GetMeIn" index="0" unique_id=997134603]
+offset_left = 154.0
+offset_right = 345.0
 text = "Let Me In"
 
 [node name="LetMeThink" parent="." unique_id=2022389236 instance=ExtResource("4_plwd3")]
@@ -147,6 +149,8 @@ offset_top = 1274.0
 offset_bottom = 1372.0
 
 [node name="Label" parent="LetMeThink" index="0" unique_id=997134603]
+offset_left = 131.0
+offset_right = 370.0
 text = "Let Me Think"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=384876020]
