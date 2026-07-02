@@ -1,5 +1,5 @@
 extends Area2D
-@export_file("*.tscn") var next_level_path
+@export var next_room_code: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +12,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("body entered top exit, body name is: ", body.name)
 	if body.name == "Player":
-		if next_level_path:
-			SceneManager.load_room(next_level_path, "SpawnBottom")
+		if next_room_code != "":
+			var path = "res://scenes/map/rooms/room_" + next_room_code + "/room_" + next_room_code + ".tscn"
+			if FileAccess.file_exists(path):
+				SceneManager.load_room(path, "SpawnBottom")
+			else:
+				# Log an error so you can see it in the Debugger tab
+				push_error("Room not found: " + path)
