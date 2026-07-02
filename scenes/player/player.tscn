@@ -74,7 +74,7 @@ animations = [{
 "duration": 15.0,
 "texture": ExtResource("2_cnsyf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"smoking",
 "speed": 10.0
 }, {
@@ -82,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_h17s1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stand",
 "speed": 10.0
 }, {
@@ -111,14 +111,14 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_uf5tr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8afob"]
-radius = 30.0
-height = 108.0
+radius = 32.0
+height = 128.0
 
 [node name="Player" type="CharacterBody2D" unique_id=972562201]
 script = ExtResource("1_8afob")

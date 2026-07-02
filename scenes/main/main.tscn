@@ -15,5 +15,6 @@ script = ExtResource("1_l3cfh")
 [node name="Player" parent="." unique_id=474458969 instance=ExtResource("1_a8run")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=276652842]
+z_index = 100
 position = Vector2(540, 960)
 texture = ExtResource("3_k2fmo")

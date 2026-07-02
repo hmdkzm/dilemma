@@ -5,6 +5,12 @@
 [ext_resource type="Script" uid="uid://byoxhdshunejm" path="res://scenes/map/left_exit.gd" id="3_xo4nf"]
 [ext_resource type="Script" uid="uid://bhmvo0sh64gh6" path="res://scenes/map/bottom_exit.gd" id="4_lewqs"]
 
+[sub_resource type="TileSet" id="TileSet_oimqs"]
+tile_size = Vector2i(30, 30)
+
+[sub_resource type="TileSet" id="TileSet_pnq82"]
+tile_size = Vector2i(30, 30)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vas0o"]
 size = Vector2(500, 50)
 
@@ -18,6 +24,13 @@ size = Vector2(50, 500)
 size = Vector2(500, 50)
 
 [node name="RoomTemplate" type="Node2D" unique_id=2016090015]
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=317935632]
+tile_set = SubResource("TileSet_oimqs")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=338024773]
+z_index = 1
+tile_set = SubResource("TileSet_pnq82")
 
 [node name="TopExit" type="Area2D" parent="." unique_id=1995505711]
 script = ExtResource("1_io74p")
