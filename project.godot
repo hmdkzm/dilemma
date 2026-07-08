@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*uid://ciulqj3lcomx1"
 TransitionLayer="*uid://bft5oygysiu3e"
+Setting="*uid://1jrp53ifjb2r"
 
 [display]
 

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://rmefv1vb0dbb"]
+
+[ext_resource type="Texture2D" uid="uid://c6rdjrr6kysoa" path="res://scenes/ui/setting_button/assets/setting_button_normal.png" id="1_2srr1"]
+[ext_resource type="Script" uid="uid://dsx2m72bdby5p" path="res://scenes/ui/setting_button/setting_button.gd" id="2_rpbn3"]
+
+[node name="SettingButton" type="TextureButton" unique_id=1058383108]
+texture_normal = ExtResource("1_2srr1")
+script = ExtResource("2_rpbn3")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

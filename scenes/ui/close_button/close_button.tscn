@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://clfr1px3ll88b"]
+
+[ext_resource type="Texture2D" uid="uid://78o5xlikqqwe" path="res://scenes/ui/close_button/assets/close_button_normal.png" id="1_sjupx"]
+
+[node name="CloseButton" type="TextureButton" unique_id=1766157917]
+texture_normal = ExtResource("1_sjupx")

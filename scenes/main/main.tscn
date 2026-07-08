@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b8xqcs4317kn1" path="res://scenes/main/main.gd" id="1_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://calp8o68p2uof" path="res://scenes/map/rooms/room_a7/room_a7.tscn" id="3_6q06x"]
 [ext_resource type="Texture2D" uid="uid://nyjyljodoieu" path="res://scenes/main/assets/frame.png" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://rmefv1vb0dbb" path="res://scenes/ui/setting_button/setting_button.tscn" id="5_6q06x"]
 
 [node name="Main" type="Node2D" unique_id=1001169366]
 script = ExtResource("1_l3cfh")
@@ -18,3 +19,10 @@ script = ExtResource("1_l3cfh")
 z_index = 100
 position = Vector2(540, 960)
 texture = ExtResource("3_k2fmo")
+
+[node name="SettingButton" parent="." unique_id=1058383108 instance=ExtResource("5_6q06x")]
+z_index = 101
+offset_left = 915.0
+offset_top = 1477.0
+offset_right = 1015.0
+offset_bottom = 1577.0
