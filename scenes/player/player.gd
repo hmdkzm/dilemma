@@ -1,5 +1,5 @@
 class_name Player extends CharacterBody2D
-
+const FOOTSTEP_SFX = "res://scenes/player/assets/audio/bbc_footsteps-_07064076.ogg"
 @export var speed = 300 # How fast the player will move (pixels/sec).
 @onready var nav_agent = $NavigationAgent2D
 @onready var anim = $AnimatedSprite2D
