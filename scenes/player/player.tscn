@@ -141,6 +141,7 @@ one_shot = true
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=2033646354]
 stream = ExtResource("25_007i1")
+bus = &"SFX"
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
