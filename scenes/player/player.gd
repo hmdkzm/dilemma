@@ -22,8 +22,6 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("click"):
 		click_position = get_global_mouse_position()
 		nav_agent.target_position = get_global_mouse_position()
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.play()
 		if !walk_sound.is_processing():
 			walk_sound.play()
 		$IdleTimer.stop()
@@ -39,8 +37,14 @@ func _physics_process(_delta: float) -> void:
 	var next_path_position = nav_agent.get_next_path_position()
 	var direction = global_position.direction_to(next_path_position)
 	velocity = direction * speed
-	$AnimatedSprite2D.rotation_degrees = rad_to_deg(velocity.angle()) + 90
-	move_and_slide()
+	if nav_agent.is_target_reachable():
+		$AnimatedSprite2D.rotation_degrees = rad_to_deg(velocity.angle()) + 90
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.play()
+		move_and_slide()
+	else:
+		walk_sound.stop()
+		anim.animation = "stand"
 	return
 	
 

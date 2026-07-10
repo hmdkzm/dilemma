@@ -3,7 +3,9 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	set_volume(0.2, "Sound")
+	set_volume(0.2, "Music")
+	set_volume(0.2, "SFX")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,22 +17,20 @@ func toggle_settings():
 	# Optional: Pause the game when settings are open
 	get_tree().paused = visible
 
+func set_volume(value: float, bus_name: StringName) -> void:
+	print(value)
+	var db = linear_to_db(value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), db)
 
 func _on_close_button_pressed() -> void:
 	print("toggled")
 	toggle_settings()
 
 func _on_sound_slider_value_changed(value: float) -> void:
-	var db = linear_to_db(value)
-	print(value, db)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"), db)
+	set_volume(value, "Sound")
 
 func _on_music_slider_value_changed(value: float) -> void:
-	print(value)
-	var db = linear_to_db(value)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), db)
+	set_volume(value, "Music")
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	print(value)
-	var db = linear_to_db(value)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), db)
+	set_volume(value, "SFX")

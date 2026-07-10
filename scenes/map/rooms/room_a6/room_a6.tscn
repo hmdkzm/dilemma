@@ -2390,3 +2390,6 @@ tile_set = SubResource("TileSet_j67lc")
 
 [node name="TopExit" parent="." index="3" unique_id=1995505711]
 next_room_code = "b6"
+
+[node name="RightExit" parent="." index="4" unique_id=367294302]
+next_room_code = "a7"
