@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1jrp53ifjb2r"]
 
 [ext_resource type="Script" uid="uid://c25gudrc68ds6" path="res://scenes/setting/setting.gd" id="1_ai7lg"]
+[ext_resource type="Texture2D" uid="uid://bavr2vevoorrr" path="res://scenes/setting/assets/modal_frame.png" id="2_8tmie"]
 [ext_resource type="FontFile" uid="uid://cbb2k15gnqnhu" path="res://assets/fonts/AmaticSC-Bold.ttf" id="2_uaulw"]
 [ext_resource type="PackedScene" uid="uid://caajtkbvemi0i" path="res://scenes/ui/h_slider/h_slider.tscn" id="3_p1n72"]
 [ext_resource type="PackedScene" uid="uid://clfr1px3ll88b" path="res://scenes/ui/close_button/close_button.tscn" id="3_uaulw"]
@@ -13,6 +14,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="Setting" type="CanvasLayer" unique_id=2057856063]
 process_mode = 3
 layer = 100
+visible = false
 script = ExtResource("1_ai7lg")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2125854765]
@@ -27,9 +29,10 @@ offset_top = 320.0
 offset_right = 1016.0
 offset_bottom = 1664.0
 
-[node name="ColorRect" type="ColorRect" parent="CenterContainer" unique_id=382251049]
+[node name="ColorRect" type="TextureRect" parent="CenterContainer" unique_id=928273233]
 custom_minimum_size = Vector2(952, 1344)
 layout_mode = 2
+texture = ExtResource("2_8tmie")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2112696987]
 custom_minimum_size = Vector2(400, 0)
@@ -42,7 +45,7 @@ label_settings = SubResource("LabelSettings_5x22e")
 
 [node name="SoundSlider" parent="CenterContainer/VBoxContainer" unique_id=393025434 instance=ExtResource("3_p1n72")]
 layout_mode = 2
-value = 0.5
+value = 0.2
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1703937318]
 layout_mode = 2
@@ -51,7 +54,7 @@ label_settings = SubResource("LabelSettings_5x22e")
 
 [node name="MusicSlider" parent="CenterContainer/VBoxContainer" unique_id=523805522 instance=ExtResource("3_p1n72")]
 layout_mode = 2
-value = 0.5
+value = 0.2
 
 [node name="Label3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=2071886364]
 layout_mode = 2
@@ -60,7 +63,7 @@ label_settings = SubResource("LabelSettings_5x22e")
 
 [node name="SfxSlider" parent="CenterContainer/VBoxContainer" unique_id=737608912 instance=ExtResource("3_p1n72")]
 layout_mode = 2
-value = 0.5
+value = 0.2
 
 [node name="CloseButton" parent="." unique_id=1766157917 instance=ExtResource("3_uaulw")]
 offset_left = 88.0

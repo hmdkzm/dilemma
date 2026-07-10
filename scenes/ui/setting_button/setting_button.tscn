@@ -1,10 +1,28 @@
 [gd_scene format=3 uid="uid://rmefv1vb0dbb"]
 
 [ext_resource type="Texture2D" uid="uid://c6rdjrr6kysoa" path="res://scenes/ui/setting_button/assets/setting_button_normal.png" id="1_2srr1"]
+[ext_resource type="Texture2D" uid="uid://w62svntr6dy2" path="res://scenes/ui/setting_button/assets/setting_button_frame_01.png" id="2_b72rj"]
 [ext_resource type="Script" uid="uid://dsx2m72bdby5p" path="res://scenes/ui/setting_button/setting_button.gd" id="2_rpbn3"]
+[ext_resource type="Texture2D" uid="uid://01df8gk6po0s" path="res://scenes/ui/setting_button/assets/setting_button_frame_02.png" id="3_wu6dd"]
+[ext_resource type="Texture2D" uid="uid://cgbj5gouq85lf" path="res://scenes/ui/setting_button/assets/setting_button_frame_03.png" id="4_iowgm"]
+[ext_resource type="Texture2D" uid="uid://cr3yephprhdjy" path="res://scenes/ui/setting_button/assets/setting_button_frame_04.png" id="5_tbr24"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qbmcf"]
+frames = 5
+frame_0/texture = ExtResource("1_2srr1")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("2_b72rj")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("3_wu6dd")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("4_iowgm")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("5_tbr24")
+frame_4/duration = 0.2
 
 [node name="SettingButton" type="TextureButton" unique_id=1058383108]
 texture_normal = ExtResource("1_2srr1")
+texture_hover = SubResource("AnimatedTexture_qbmcf")
 script = ExtResource("2_rpbn3")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
