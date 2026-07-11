@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cme8tdsos1jtw" path="res://scenes/inventory/inventory_slot.gd" id="1_u6pog"]
 
 [node name="InventorySlot" type="Control" unique_id=164051847]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0
@@ -14,6 +14,6 @@ script = ExtResource("1_u6pog")
 
 [node name="Icon" type="TextureRect" parent="." unique_id=2128068804]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
 expand_mode = 5
