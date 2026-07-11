@@ -8,7 +8,6 @@ var player: Player
 func load_room(room_path: String, spawn_side: String):
 	await TransitionLayer.start_transition()
 	var room_container = get_tree().root.get_node("Main/RoomContainer")
-	print("new room path:", room_path)
 	player = get_tree().root.find_child("Player", true, false)
 	entry_point = spawn_side
 	for room in room_container.get_children():

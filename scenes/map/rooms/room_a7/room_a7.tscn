@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://brutucpmjxl" path="res://scenes/map/rooms/room_a7/assets/room_a7.jpg" id="1_becio"]
 [ext_resource type="PackedScene" uid="uid://bqgcjvlic1up1" path="res://scenes/map/room_template.tscn" id="1_w0qfl"]
-[ext_resource type="PackedScene" uid="uid://c0uifx56sdcgt" path="res://scenes/artifacts/artifact.tscn" id="3_s6gut"]
-[ext_resource type="Resource" uid="uid://c1dhnotf6qt5" path="res://resources/artifacts/note.tres" id="4_uvoa4"]
-[ext_resource type="Resource" uid="uid://w38vqlnq07n8" path="res://resources/artifacts/cog.tres" id="5_yuby7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w0qfl"]
 vertices = PackedVector2Array(15, 15, -15, 15, -15, -15, 15, -15)
@@ -2452,28 +2449,3 @@ next_room_code = "a8"
 
 [node name="LeftExit" parent="." index="5" unique_id=550124969]
 next_room_code = "a6"
-
-[node name="Artifact" parent="." index="11" unique_id=330247274 instance=ExtResource("3_s6gut")]
-position = Vector2(234, 820)
-artifact_data = ExtResource("4_uvoa4")
-room_name = "a7"
-
-[node name="Artifact2" parent="." index="12" unique_id=831897069 instance=ExtResource("3_s6gut")]
-position = Vector2(876, 691)
-artifact_data = ExtResource("4_uvoa4")
-room_name = "a7"
-
-[node name="Artifact3" parent="." index="13" unique_id=1155185880 instance=ExtResource("3_s6gut")]
-position = Vector2(166, 654)
-artifact_data = ExtResource("4_uvoa4")
-room_name = "a7"
-
-[node name="Artifact4" parent="." index="14" unique_id=305849015 instance=ExtResource("3_s6gut")]
-position = Vector2(598, 692)
-artifact_data = ExtResource("4_uvoa4")
-room_name = "a7"
-
-[node name="Artifact5" parent="." index="15" unique_id=983894345 instance=ExtResource("3_s6gut")]
-position = Vector2(627, 852)
-artifact_data = ExtResource("5_yuby7")
-room_name = "a7"
