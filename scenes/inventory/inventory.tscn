@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bhm5mcxgsy4h7"]
+
+[ext_resource type="Script" uid="uid://djjgb85j6ckdi" path="res://scenes/inventory/inventory.gd" id="1_msrby"]
+
+[node name="Inventory" type="Control" unique_id=20514886]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_msrby")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1914429798]
+layout_mode = 0
+offset_right = 445.0
+offset_bottom = 280.0
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=472808173]
+layout_mode = 2
+columns = 6

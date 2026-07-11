@@ -8,4 +8,3 @@ func is_collected(artifact_key: String, artifact_data: ArtifactData) -> bool:
 
 func mark_as_collected(artifact_key: String, artifact_data: ArtifactData):
 	collected_artifacts[artifact_key] = true
-	print(collected_artifacts)

@@ -18,12 +18,10 @@ func toggle_settings():
 	get_tree().paused = visible
 
 func set_volume(value: float, bus_name: StringName) -> void:
-	print(value)
 	var db = linear_to_db(value)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), db)
 
 func _on_close_button_pressed() -> void:
-	print("toggled")
 	toggle_settings()
 
 func _on_sound_slider_value_changed(value: float) -> void:

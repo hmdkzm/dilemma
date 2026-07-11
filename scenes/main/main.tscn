@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://calp8o68p2uof" path="res://scenes/map/rooms/room_a7/room_a7.tscn" id="3_6q06x"]
 [ext_resource type="Texture2D" uid="uid://nyjyljodoieu" path="res://scenes/main/assets/frame.png" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://rmefv1vb0dbb" path="res://scenes/ui/setting_button/setting_button.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://bhm5mcxgsy4h7" path="res://scenes/inventory/inventory.tscn" id="6_ow5a4"]
 
 [node name="Main" type="Node2D" unique_id=1001169366]
 script = ExtResource("1_l3cfh")
@@ -26,3 +27,11 @@ offset_left = 915.0
 offset_top = 1477.0
 offset_right = 1015.0
 offset_bottom = 1577.0
+
+[node name="Inventory" parent="." unique_id=20514886 instance=ExtResource("6_ow5a4")]
+z_index = 101
+custom_minimum_size = Vector2(840, 392)
+offset_left = 56.0
+offset_top = 1488.0
+offset_right = 896.0
+offset_bottom = 1880.0
