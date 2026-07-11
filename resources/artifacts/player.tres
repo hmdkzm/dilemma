@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArtifactData" format=3 uid="uid://c7vv0u0klr0eq"]
+
+[ext_resource type="Script" uid="uid://cpqivbn4su4qm" path="res://scripts/artifact_data.gd" id="1_8q5kp"]
+[ext_resource type="Texture2D" uid="uid://ccfxq57bxwgh0" path="res://assets/artifacts/player.png" id="1_mohel"]
+[ext_resource type="AudioStream" uid="uid://8ejpam6n05d4" path="res://assets/sfx/item-equip.mp3" id="3_mohel"]
+
+[resource]
+script = ExtResource("1_8q5kp")
+id = "2"
+display_name = "player"
+icon = ExtResource("1_mohel")
+sfx = ExtResource("3_mohel")
+metadata/_custom_type_script = "uid://cpqivbn4su4qm"
