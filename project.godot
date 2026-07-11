@@ -26,6 +26,8 @@ TransitionLayer="*uid://bft5oygysiu3e"
 Setting="*uid://1jrp53ifjb2r"
 SfxManager="*uid://cpjbmsjlek1va"
 MusicManager="*uid://nh71gdfmd4xm"
+InventoryManager="*uid://c0o1y4rfxip83"
+GameState="*uid://cm5yy06633bsj"
 
 [display]
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArtifactData" format=3 uid="uid://c1dhnotf6qt5"]
+
+[ext_resource type="Texture2D" uid="uid://c5erxcjgh3xvf" path="res://scenes/artifacts/assets/note.png" id="1_3rfth"]
+[ext_resource type="Script" uid="uid://cpqivbn4su4qm" path="res://scripts/artifact_data.gd" id="1_sidr3"]
+[ext_resource type="AudioStream" uid="uid://b8p7adayn12a0" path="res://assets/sfx/paper-collect.mp3" id="3_516nl"]
+
+[resource]
+script = ExtResource("1_sidr3")
+id = "1"
+display_name = "diary note 1"
+icon = ExtResource("1_3rfth")
+sfx = ExtResource("3_516nl")
+metadata/_custom_type_script = "uid://cpqivbn4su4qm"
