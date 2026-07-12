@@ -3,6 +3,7 @@ const SLOT_SCENE = preload("res://scenes/inventory/inventory_slot.tscn")
 @onready var inv = $ScrollContainer/GridContainer
 # Called when the node enters the scene tree for the first time.
 var artifacts: Array[ArtifactData] = InventoryManager.inventory
+signal got_player()
 func _ready() -> void:
 	InventoryManager.inventory_changed.connect(_on_inventory_changed)
 	render_inventory(artifacts)
@@ -16,6 +17,8 @@ func render_inventory(artifacts: Array[ArtifactData]) -> void:
 	for child in inv.get_children():
 		child.queue_free()
 	for i in range(artifacts.size()):
+		if artifacts[i].display_name == "player":
+			got_player.emit()
 		var new_slot = SLOT_SCENE.instantiate()
 		new_slot.meta_data = artifacts[i]
 		inv.add_child(new_slot)

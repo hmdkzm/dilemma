@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://b3mtsecu2ymj5"]
+
+[ext_resource type="Script" uid="uid://dlhpd8i0okdoj" path="res://scenes/cassette_player/cassette_player.gd" id="1_ahe0w"]
+[ext_resource type="Texture2D" uid="uid://cgr0hjh5opy2n" path="res://scenes/cassette_player/assets/cassette_playaer_body.png" id="1_wtrwm"]
+[ext_resource type="Texture2D" uid="uid://btpcsm1gt8bkf" path="res://scenes/cassette_player/assets/play_button_normal.png" id="2_3uyd4"]
+[ext_resource type="Texture2D" uid="uid://es8vwgj8klym" path="res://scenes/cassette_player/assets/play_button_pressed.png" id="3_rmfbp"]
+[ext_resource type="Texture2D" uid="uid://ui4hxmme6ckn" path="res://scenes/cassette_player/assets/back_button_normal.png" id="4_rmfbp"]
+[ext_resource type="Texture2D" uid="uid://exshst7o53ow" path="res://scenes/cassette_player/assets/back_button_pressed.png" id="5_aa1c6"]
+[ext_resource type="Texture2D" uid="uid://2a8yji40sm3i" path="res://scenes/cassette_player/assets/forward_button_normal.png" id="6_xst34"]
+[ext_resource type="Texture2D" uid="uid://b6adjhk1hn8yo" path="res://scenes/cassette_player/assets/forward_button_pressed.png" id="7_ahe0w"]
+[ext_resource type="Texture2D" uid="uid://bvmderxvk4lkt" path="res://scenes/cassette_player/assets/stop_button_normal.png" id="8_8d0qx"]
+[ext_resource type="Texture2D" uid="uid://cu4bidcmysqlc" path="res://scenes/cassette_player/assets/stop_button_pressed.png" id="9_b13un"]
+[ext_resource type="AudioStream" uid="uid://ocq7jhwmrwke" path="res://assets/sfx/fast-foward.mp3" id="11_8d0qx"]
+[ext_resource type="Texture2D" uid="uid://bwfql5dtkq3ha" path="res://scenes/cassette_player/assets/cassette_playaer_reel.png" id="12_b13un"]
+[ext_resource type="AudioStream" uid="uid://byximomqsiq8x" path="res://assets/sfx/button-press.mp3" id="12_iyrfm"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ahe0w"]
+
+[sub_resource type="Animation" id="Animation_iyrfm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Reel2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b13un"]
+resource_name = "forwarding"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Reel2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_5jmj4"]
+resource_name = "playing"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Reel2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_ng2ea"]
+resource_name = "rewinding"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Reel2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ng2ea"]
+_data = {
+&"RESET": SubResource("Animation_iyrfm"),
+&"forwarding": SubResource("Animation_b13un"),
+&"playing": SubResource("Animation_5jmj4"),
+&"rewinding": SubResource("Animation_ng2ea")
+}
+
+[node name="CassettePlayer" type="Control" unique_id=378657323]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ahe0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1804682539]
+texture = ExtResource("1_wtrwm")
+
+[node name="Play" type="TextureButton" parent="." unique_id=1148129868]
+layout_mode = 0
+offset_left = -146.0
+offset_top = -158.0
+offset_right = -102.0
+offset_bottom = -118.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ahe0w")
+texture_normal = ExtResource("2_3uyd4")
+texture_pressed = ExtResource("3_rmfbp")
+
+[node name="Back" type="TextureButton" parent="." unique_id=1829693348]
+layout_mode = 0
+offset_left = -85.0
+offset_top = -160.0
+offset_right = -42.0
+offset_bottom = -120.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ahe0w")
+texture_normal = ExtResource("4_rmfbp")
+texture_pressed = ExtResource("5_aa1c6")
+
+[node name="Forward" type="TextureButton" parent="." unique_id=1704491271]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -159.0
+offset_right = 24.0
+offset_bottom = -119.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ahe0w")
+texture_normal = ExtResource("6_xst34")
+texture_pressed = ExtResource("7_ahe0w")
+
+[node name="Stop" type="TextureButton" parent="." unique_id=95922078]
+layout_mode = 0
+offset_left = 38.0
+offset_top = -159.0
+offset_right = 80.0
+offset_bottom = -119.0
+texture_normal = ExtResource("8_8d0qx")
+texture_pressed = ExtResource("9_b13un")
+
+[node name="FastForward" type="AudioStreamPlayer2D" parent="." unique_id=1899761850]
+stream = ExtResource("11_8d0qx")
+bus = &"SFX"
+
+[node name="ButtonPress" type="AudioStreamPlayer2D" parent="." unique_id=890098745]
+stream = ExtResource("12_iyrfm")
+bus = &"SFX"
+
+[node name="Reel" type="Sprite2D" parent="." unique_id=665018237]
+position = Vector2(47, 8)
+texture = ExtResource("12_b13un")
+
+[node name="Reel2" type="Sprite2D" parent="." unique_id=1740646512]
+position = Vector2(-64, 8)
+texture = ExtResource("12_b13un")
+
+[node name="ReelAnimation" type="AnimationPlayer" parent="." unique_id=1852832902]
+libraries/ = SubResource("AnimationLibrary_ng2ea")

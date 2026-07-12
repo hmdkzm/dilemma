@@ -9,6 +9,7 @@ var is_spawned_at_marker = false
 var screen_size # Size of the game window.
 var click_position = Vector2()
 var target_position = Vector2()
+var is_input_locked: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -19,7 +20,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_pressed("click"):
+	if Input.is_action_pressed("click") and !is_input_locked:
 		click_position = get_global_mouse_position()
 		nav_agent.target_position = get_global_mouse_position()
 		if !walk_sound.is_processing():

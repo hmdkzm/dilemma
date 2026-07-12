@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bqgcjvlic1up1" path="res://scenes/map/room_template.tscn" id="1_byp4f"]
 [ext_resource type="TileSet" uid="uid://dnph14j1xrst2" path="res://scenes/map/tilesets/floor_hall_url.tres" id="2_xm7tf"]
 [ext_resource type="TileSet" uid="uid://vw4vt0nilb28" path="res://scenes/map/tilesets/wall_hall_url.tres" id="3_64ptg"]
+[ext_resource type="PackedScene" uid="uid://c0uifx56sdcgt" path="res://scenes/artifacts/artifact.tscn" id="4_64ptg"]
+[ext_resource type="Resource" uid="uid://c7vv0u0klr0eq" path="res://resources/artifacts/player.tres" id="5_cuqs8"]
 
 [node name="RoomTemplate" unique_id=2016090015 instance=ExtResource("1_byp4f")]
 
@@ -22,3 +24,8 @@ next_room_code = "d11"
 
 [node name="LeftExit" parent="." index="4" unique_id=550124969]
 next_room_code = "d9"
+
+[node name="Artifact" parent="." index="10" unique_id=330247274 instance=ExtResource("4_64ptg")]
+position = Vector2(541, 994)
+artifact_data = ExtResource("5_cuqs8")
+room_name = "d10"

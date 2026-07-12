@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://nyjyljodoieu" path="res://scenes/main/assets/frame.png" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://rmefv1vb0dbb" path="res://scenes/ui/setting_button/setting_button.tscn" id="5_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bhm5mcxgsy4h7" path="res://scenes/inventory/inventory.tscn" id="6_ow5a4"]
+[ext_resource type="Texture2D" uid="uid://ccfxq57bxwgh0" path="res://assets/artifacts/player.png" id="6_yyfjg"]
+[ext_resource type="Script" uid="uid://maprpivdk6bw" path="res://scenes/ui/setting_button/player_button.gd" id="7_b1x3f"]
 
 [node name="Main" type="Node2D" unique_id=1001169366]
 script = ExtResource("1_l3cfh")
@@ -27,6 +29,16 @@ offset_left = 915.0
 offset_top = 1477.0
 offset_right = 1015.0
 offset_bottom = 1577.0
+
+[node name="PlayerButton" parent="." unique_id=1675413785 instance=ExtResource("5_6q06x")]
+z_index = 101
+offset_left = 917.0
+offset_top = 1597.0
+offset_right = 1017.0
+offset_bottom = 1697.0
+texture_normal = ExtResource("6_yyfjg")
+texture_hover = null
+script = ExtResource("7_b1x3f")
 
 [node name="Inventory" parent="." unique_id=20514886 instance=ExtResource("6_ow5a4")]
 z_index = 101

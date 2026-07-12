@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cvy2yg5mogndx"]
+
+[ext_resource type="Script" uid="uid://dqqhr0jl83p2u" path="res://scenes/modal/player_modal.gd" id="1_5sg4u"]
+[ext_resource type="Texture2D" uid="uid://daadnqm2gpklm" path="res://scenes/modal/assets/modal_frame.png" id="2_wvsbg"]
+[ext_resource type="PackedScene" uid="uid://b3mtsecu2ymj5" path="res://scenes/cassette_player/cassette_player.tscn" id="3_3m7fn"]
+[ext_resource type="PackedScene" uid="uid://clfr1px3ll88b" path="res://scenes/ui/close_button/close_button.tscn" id="4_w7bhb"]
+
+[node name="PlayerModal" type="CanvasLayer" unique_id=2057856063]
+process_mode = 3
+layer = 100
+visible = false
+script = ExtResource("1_5sg4u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2125854765]
+custom_minimum_size = Vector2(1080, 1920)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1065512736]
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 1016.0
+offset_bottom = 1664.0
+mouse_filter = 0
+
+[node name="ColorRect" type="TextureRect" parent="CenterContainer" unique_id=928273233]
+custom_minimum_size = Vector2(952, 1344)
+layout_mode = 2
+texture = ExtResource("2_wvsbg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2112696987]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="CassettePlayer" parent="CenterContainer" unique_id=378657323 instance=ExtResource("3_3m7fn")]
+layout_mode = 2
+
+[node name="CloseButton" parent="." unique_id=1766157917 instance=ExtResource("4_w7bhb")]
+offset_left = 88.0
+offset_top = 344.0
+offset_right = 188.0
+offset_bottom = 444.0
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

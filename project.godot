@@ -28,6 +28,7 @@ SfxManager="*uid://cpjbmsjlek1va"
 MusicManager="*uid://nh71gdfmd4xm"
 InventoryManager="*uid://c0o1y4rfxip83"
 GameState="*uid://cm5yy06633bsj"
+PlayerModal="*uid://cvy2yg5mogndx"
 
 [display]
 

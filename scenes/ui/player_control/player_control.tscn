@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bwx40pbj443xl"]
+
+[ext_resource type="Texture2D" uid="uid://b5qv8eg6fdnvw" path="res://scenes/ui/player_control/assets/play_button_normal.png" id="1_j2sb7"]
+[ext_resource type="Texture2D" uid="uid://cr7umvphsyoc0" path="res://scenes/ui/player_control/assets/pause_button_normal.png" id="1_sy2ti"]
+[ext_resource type="Texture2D" uid="uid://ddoet363xuq82" path="res://scenes/ui/player_control/assets/play_button_frame1.png" id="2_66sil"]
+[ext_resource type="Texture2D" uid="uid://cyiec0k2f3ur4" path="res://scenes/ui/player_control/assets/pause_button_pressed.png" id="2_456bp"]
+[ext_resource type="Texture2D" uid="uid://rmv2qfk4krh5" path="res://scenes/ui/player_control/assets/play_button_frame2.png" id="3_aqqrq"]
+[ext_resource type="Texture2D" uid="uid://rqpmsf0jnsj0" path="res://scenes/ui/player_control/assets/pause_button_frame1.png" id="3_f2abg"]
+[ext_resource type="Texture2D" uid="uid://bfrfh42vkdrip" path="res://scenes/ui/player_control/assets/play_button_frame3.png" id="4_1mh3f"]
+[ext_resource type="Texture2D" uid="uid://bmbbwobm3vemt" path="res://scenes/ui/player_control/assets/pause_button_frame2.png" id="4_5vjbf"]
+[ext_resource type="Texture2D" uid="uid://dos6ytyvoeeis" path="res://scenes/ui/player_control/assets/play_button_pressed.png" id="4_pw3do"]
+[ext_resource type="Texture2D" uid="uid://cig77rifxpg0e" path="res://scenes/ui/player_control/assets/play_button_frame4.png" id="5_sy2ti"]
+[ext_resource type="Texture2D" uid="uid://dgjoqxbvtyjtf" path="res://scenes/ui/player_control/assets/pause_button_frame3.png" id="5_txf4w"]
+[ext_resource type="Texture2D" uid="uid://t8o3h3jlgh2d" path="res://scenes/ui/player_control/assets/play_button_frame5.png" id="6_66sil"]
+[ext_resource type="Texture2D" uid="uid://dg2byc85ibfaq" path="res://scenes/ui/player_control/assets/pause_button_frame4.png" id="6_d53io"]
+[ext_resource type="Texture2D" uid="uid://c6ug3dpsn6rg8" path="res://scenes/ui/player_control/assets/pause_button_frame5.png" id="7_di5yj"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_tolfx"]
+frames = 5
+frame_0/texture = ExtResource("3_f2abg")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("4_5vjbf")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("5_txf4w")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("6_d53io")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("7_di5yj")
+frame_4/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5x22e"]
+frames = 5
+frame_0/texture = ExtResource("2_66sil")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("3_aqqrq")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("4_1mh3f")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("5_sy2ti")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("6_66sil")
+frame_4/duration = 0.1
+
+[node name="PlayerControl" type="Control" unique_id=960952642]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=379462474]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 132.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="Pause" type="TextureButton" parent="HBoxContainer" unique_id=1384233261]
+layout_mode = 2
+texture_normal = ExtResource("1_sy2ti")
+texture_pressed = ExtResource("2_456bp")
+texture_hover = SubResource("AnimatedTexture_tolfx")
+
+[node name="Play" type="TextureButton" parent="HBoxContainer" unique_id=837613428]
+layout_mode = 2
+texture_normal = ExtResource("1_j2sb7")
+texture_pressed = ExtResource("4_pw3do")
+texture_hover = SubResource("AnimatedTexture_5x22e")
