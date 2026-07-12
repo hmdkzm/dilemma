@@ -35,7 +35,6 @@ func _on_play_pressed(active: bool):
 	else:
 		stop_cassette()
 func _on_forward_pressed(active: bool) -> void:
-	print("forward")
 	button_sfx.play()
 	if not is_cassette_at_end:
 		if active:

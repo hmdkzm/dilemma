@@ -27,14 +27,13 @@ func _process(delta):
 	if is_playing:
 		playback_position = music_player.get_playback_position()
 	if is_fast_forwarding:
-		print(playback_position)
 		playback_position = (playback_position + (SCRUB_SPEED * delta))
 		if playback_position >= music_length:
 			if current_track_index < playlist.size() - 1:
-				print("next", current_track_index)
+				print("next:", current_track_index + 1)
 				next_track()
 			else:
-				print("ended")
+				print("ended", )
 				cassette_ended.emit()
 	elif is_rewinding:
 		playback_position = playback_position - (SCRUB_SPEED * delta)

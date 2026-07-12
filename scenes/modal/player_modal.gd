@@ -13,7 +13,10 @@ func _process(delta: float) -> void:
 func toggle_settings():
 	visible = !visible
 	# Optional: Pause the game when settings are open
-	get_tree().paused = visible
+	var player = get_tree().root.find_child("Player", true, false)
+	print(player)
+	if player:
+		player.is_input_locked = visible
 
 
 func _on_close_button_pressed() -> void:
