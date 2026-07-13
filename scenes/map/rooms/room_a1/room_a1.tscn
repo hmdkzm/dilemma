@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bqgcjvlic1up1" path="res://scenes/map/room_template.tscn" id="1_ftxrk"]
 [ext_resource type="TileSet" uid="uid://bq2jvs840lhma" path="res://scenes/map/floor_r.tres" id="2_wpqmt"]
 [ext_resource type="Texture2D" uid="uid://c2swseboa5d3l" path="res://scenes/map/assets/wall-r.png" id="3_0g2xs"]
+[ext_resource type="PackedScene" uid="uid://c0uifx56sdcgt" path="res://scenes/artifacts/artifact.tscn" id="4_q1us2"]
+[ext_resource type="Resource" uid="uid://c1dhnotf6qt5" path="res://resources/artifacts/note.tres" id="5_8xyv5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1us2"]
 texture = ExtResource("3_0g2xs")
@@ -1477,3 +1479,8 @@ tile_set = SubResource("TileSet_lr66j")
 
 [node name="RightExit" parent="." index="3" unique_id=367294302]
 next_room_code = "a2"
+
+[node name="Artifact" parent="." index="10" unique_id=330247274 instance=ExtResource("4_q1us2")]
+position = Vector2(448, 688)
+artifact_data = ExtResource("5_8xyv5")
+room_name = "a1"
