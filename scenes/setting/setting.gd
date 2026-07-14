@@ -3,9 +3,9 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_volume(0.2, "Sound")
-	set_volume(0.2, "Music")
-	set_volume(0.2, "SFX")
+	set_volume(0.5, "Sound")
+	set_volume(0.5, "Music")
+	set_volume(0.5, "SFX")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
