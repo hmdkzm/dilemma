@@ -45,7 +45,7 @@ label_settings = SubResource("LabelSettings_5x22e")
 
 [node name="SoundSlider" parent="CenterContainer/VBoxContainer" unique_id=393025434 instance=ExtResource("3_p1n72")]
 layout_mode = 2
-value = 0.2
+value = 0.5
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1703937318]
 layout_mode = 2
@@ -54,7 +54,7 @@ label_settings = SubResource("LabelSettings_5x22e")
 
 [node name="MusicSlider" parent="CenterContainer/VBoxContainer" unique_id=523805522 instance=ExtResource("3_p1n72")]
 layout_mode = 2
-value = 0.2
+value = 0.5
 
 [node name="Label3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=2071886364]
 layout_mode = 2
@@ -63,7 +63,7 @@ label_settings = SubResource("LabelSettings_5x22e")
 
 [node name="SfxSlider" parent="CenterContainer/VBoxContainer" unique_id=737608912 instance=ExtResource("3_p1n72")]
 layout_mode = 2
-value = 0.2
+value = 0.5
 
 [node name="CloseButton" parent="." unique_id=1766157917 instance=ExtResource("3_uaulw")]
 offset_left = 88.0

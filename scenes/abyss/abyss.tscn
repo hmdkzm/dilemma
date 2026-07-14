@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://2dovnb7i0y4k"]
+
+[ext_resource type="Script" uid="uid://b7xusiye65i6s" path="res://scenes/abyss/abyss.gd" id="1_1phdv"]
+[ext_resource type="Texture2D" uid="uid://b5v3c402xcct1" path="res://scenes/abyss/assets/abyss_frame01.png" id="1_adgj8"]
+[ext_resource type="Texture2D" uid="uid://cpy705eso20mi" path="res://scenes/abyss/assets/abyss_frame02.png" id="2_1phdv"]
+[ext_resource type="Texture2D" uid="uid://cxoxg72xx61q0" path="res://scenes/abyss/assets/abyss_frame03.png" id="3_h8tmw"]
+[ext_resource type="Texture2D" uid="uid://crhf3053014h1" path="res://scenes/abyss/assets/abyss_frame04.png" id="4_h7x2e"]
+[ext_resource type="Texture2D" uid="uid://crl2w2l75u5ki" path="res://scenes/abyss/assets/abyss_frame05.png" id="5_h1xw3"]
+[ext_resource type="Texture2D" uid="uid://8lywl41xlnv1" path="res://scenes/abyss/assets/abyss_frame06.png" id="6_kug47"]
+[ext_resource type="Texture2D" uid="uid://byba2mifn4vnk" path="res://scenes/abyss/assets/abyss_frame07.png" id="7_vxmo5"]
+[ext_resource type="Texture2D" uid="uid://cl84ouprfx5a3" path="res://scenes/abyss/assets/abyss_frame08.png" id="8_28bn0"]
+[ext_resource type="AudioStream" uid="uid://cco4oasfln78x" path="res://assets/sfx/falling-man-scream.mp3" id="10_h8tmw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5x22e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_adgj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1phdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h8tmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h7x2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h1xw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kug47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vxmo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_28bn0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5x22e"]
+radius = 99.72964
+
+[node name="Abyss" type="Area2D" unique_id=507149500]
+script = ExtResource("1_1phdv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1644206776]
+sprite_frames = SubResource("SpriteFrames_5x22e")
+frame = 1
+frame_progress = 0.45435125
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202940147]
+shape = SubResource("CircleShape2D_5x22e")
+
+[node name="FallSound" type="AudioStreamPlayer2D" parent="." unique_id=662723365]
+stream = ExtResource("10_h8tmw")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
