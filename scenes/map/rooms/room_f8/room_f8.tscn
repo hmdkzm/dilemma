@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bqgcjvlic1up1" path="res://scenes/map/room_template.tscn" id="1_aclvd"]
 [ext_resource type="TileSet" uid="uid://pdjd6lgnaiqo" path="res://scenes/map/tilesets/floor_hall_ub.tres" id="2_sk7a7"]
 [ext_resource type="TileSet" uid="uid://btk68rb6o8k1u" path="res://scenes/map/tilesets/wall_hall_ub.tres" id="3_6l71i"]
+[ext_resource type="PackedScene" uid="uid://2dovnb7i0y4k" path="res://scenes/abyss/abyss.tscn" id="4_6l71i"]
 
 [node name="RoomTemplate" unique_id=2016090015 instance=ExtResource("1_aclvd")]
 
@@ -19,3 +20,6 @@ next_room_code = "g8"
 
 [node name="BottomExit" parent="." index="5" unique_id=1593499199]
 next_room_code = "e8"
+
+[node name="Abyss" parent="." index="10" unique_id=507149500 instance=ExtResource("4_6l71i")]
+position = Vector2(538, 718)
