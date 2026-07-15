@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://oyjotqylt47k" path="res://scenes/map/tilesets/wall_hall_r.tres" id="3_1l74t"]
 [ext_resource type="PackedScene" uid="uid://c0uifx56sdcgt" path="res://scenes/artifacts/artifact.tscn" id="4_a5pim"]
 [ext_resource type="Resource" uid="uid://c1dhnotf6qt5" path="res://resources/artifacts/note.tres" id="5_vvxsr"]
+[ext_resource type="PackedScene" uid="uid://2dovnb7i0y4k" path="res://scenes/abyss/abyss.tscn" id="6_vvxsr"]
 
 [node name="RoomTemplate" unique_id=2016090015 instance=ExtResource("1_wkbwe")]
 
@@ -23,3 +24,6 @@ next_room_code = "e2"
 position = Vector2(272, 1168)
 artifact_data = ExtResource("5_vvxsr")
 room_name = "e1"
+
+[node name="Abyss" parent="." index="11" unique_id=507149500 instance=ExtResource("6_vvxsr")]
+position = Vector2(510, 681)
