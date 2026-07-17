@@ -39,7 +39,7 @@ func _physics_process(_delta: float) -> void:
 	var direction = global_position.direction_to(next_path_position)
 	velocity = direction * speed
 	if nav_agent.is_target_reachable():
-		$AnimatedSprite2D.rotation_degrees = rad_to_deg(velocity.angle()) + 90
+		self.rotation_degrees = rad_to_deg(velocity.angle()) + 90
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.play()
 		move_and_slide()
