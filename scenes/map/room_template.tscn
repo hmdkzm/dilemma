@@ -25,10 +25,12 @@ size = Vector2(500, 50)
 
 [node name="RoomTemplate" type="Node2D" unique_id=2016090015]
 
-[node name="Floor" type="TileMapLayer" parent="." unique_id=317935632]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1138460953]
+
+[node name="Floor" type="TileMapLayer" parent="NavigationRegion2D" unique_id=317935632]
 tile_set = SubResource("TileSet_oimqs")
 
-[node name="Walls" type="TileMapLayer" parent="." unique_id=338024773]
+[node name="Walls" type="TileMapLayer" parent="NavigationRegion2D" unique_id=338024773]
 z_index = 1
 tile_set = SubResource("TileSet_pnq82")
 
