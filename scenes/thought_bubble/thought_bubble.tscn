@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://8u1bcqu8xfrw"]
+
+[ext_resource type="Texture2D" uid="uid://0526qc1iv8ob" path="res://scenes/thought_bubble/thought-bubble.png" id="1_lcrd7"]
+[ext_resource type="Script" uid="uid://cxcv3sd0lk361" path="res://scenes/thought_bubble/thought_bubble.gd" id="1_m800i"]
+[ext_resource type="FontFile" uid="uid://cbb2k15gnqnhu" path="res://assets/fonts/AmaticSC-Bold.ttf" id="2_lcrd7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5x22e"]
+line_spacing = -5.0
+font = ExtResource("2_lcrd7")
+font_size = 46
+font_color = Color(0, 0, 0, 1)
+
+[node name="ThoughtBubble" type="Control" unique_id=1151915343]
+visible = false
+z_index = 110
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m800i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=871716451]
+position = Vector2(150, -88)
+texture = ExtResource("1_lcrd7")
+
+[node name="Label" type="Label" parent="." unique_id=1994340775]
+custom_minimum_size = Vector2(280, 140)
+custom_maximum_size = Vector2(280, 140)
+layout_mode = 0
+offset_left = 12.0
+offset_top = -173.0
+offset_right = 292.0
+offset_bottom = -33.0
+text = "sample text for showing thoughts i have for sake of good
+jskdnckjnsdckjndc"
+label_settings = SubResource("LabelSettings_5x22e")
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="." unique_id=496629071]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
