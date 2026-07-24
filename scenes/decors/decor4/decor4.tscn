@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bscd2reg6wt7v"]
+
+[ext_resource type="PackedScene" uid="uid://wbd742tyb2aj" path="res://scenes/decors/decor.tscn" id="1_imooo"]
+[ext_resource type="Texture2D" uid="uid://b32lsr7josftx" path="res://scenes/decors/decor4/assets/decor4.png" id="2_ld1j3"]
+
+[node name="Decor" unique_id=189270932 instance=ExtResource("1_imooo")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=830849656]
+texture = ExtResource("2_ld1j3")
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" parent_id_path=PackedInt32Array(1632335420) index="0" unique_id=378245822]
+position = Vector2(58, 162)
+polygon = PackedVector2Array(-9, 130, 33, 134, 51, 144, 63, 171, 66, 182, 57, 200, 29, 213, -5, 215, -34, 213, -64, 200, -70, 182, -59, 152, -49, 140, -33, 133)
